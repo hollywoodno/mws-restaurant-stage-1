@@ -322,6 +322,10 @@ nav h1 a {
     width: 50%;
   }
 
+  #restaurant-container {
+    margin-top: 100px;
+  }
+
   .inside #map-container {
     background: blue none repeat scroll 0 0;
     height: 87%;
@@ -353,7 +357,7 @@ nav h1 a {
     background-color: #eee;
     font-size: 17px;
     margin: 0; */
-    width: calc(50% - 80px);
+    width: 50%;
 }
 
 #reviews-list li {
