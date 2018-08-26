@@ -359,21 +359,20 @@ nav h1 a {
     font-size: 17px;
     margin: 0;
     width: 50%;
-}
+  }
 
-#reviews-list li {
-  width: 85%;
-}
+  #reviews-list li {
+    width: 85%;
+  }
 
-#reviews-container {
-  padding-left: 40px;
-}
+  #reviews-container {
+    padding-left: 40px;
+  }
 }
 
 @media screen and (min-width: 1230px) {
   body {
     max-width: 1230px;
-    /* display: block; */
     margin-right: auto;
     margin-left: auto;
   }
@@ -389,39 +388,26 @@ nav h1 a {
     width: 25%;
   }
 
-  .inside header {
-    position: static;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-
-  
   #breadcrumb {
     padding: 10px 40px 16px;
     list-style: none;
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: 100%;
-}
+    max-width: 100%;
+  }
 
-.inside header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
+  body.inside > header {
+    max-width: inherit;
+    position: fixed;
+    top: 0;
+  }
 
   .inside #map-container {
     background: blue none repeat scroll 0 0;
-    /* height: 80%; */
     position: absolute;
-    /* right: 0; */
-    /* margin-top: 100px; */
     width: 50%;
     height: 30%;
-    /* margin-top: 80px; */
   }
 
   #map {
@@ -438,19 +424,14 @@ nav h1 a {
 
   #reviews-list {
     width: 100%;
-    display: inline-block;
   }
 
-  #reviews-list li {
-    display: inline-block;
+  #reviews-container {
+    display: block;
+    width: 100%;
   }
-  /* <div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div> */
-  /* #map > div.leaflet-control-container > div.leaflet-top.leaflet-left > div {
-    z-index: 0;
-  } */
+
   .leaflet-container {
-    /* opacity: 0; */
-    /* position: absolute; */
     z-index: 160;
   }
 }
