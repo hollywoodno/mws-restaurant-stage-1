@@ -13,20 +13,20 @@ const urlsToCache = [
     '/img/10.jpg'
 ]
 
-self.addEventListener('install', function(evt) {
+self.addEventListener('install', evt => {
     console.log('installing....');
 
     evt.waitUntil(
         // open a cache
         caches.open(cache)
-        .then(function(cache) {
+        .then(cache => {
             console.log('Cache is opened...');
 
             // cache files
             return cache.addAll(urlsToCache);
         })
-        .catch(function(e) {
-            console.log('Cached failed: ', e);
+        .catch(err => {
+            console.log('Cached failed: ', err);
         })
     )
 });
