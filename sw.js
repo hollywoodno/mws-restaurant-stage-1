@@ -30,3 +30,30 @@ self.addEventListener('install', function(evt) {
         })
     )
 });
+
+self.addEventListener('fetch', evt => {
+    console.log('request coming through: ', evt.request.url);
+
+    evt.respondWith(
+        // Check cache for image
+        caches.match(evt.request).then(rsp => {
+            if (rsp) {
+                console.log('serving a request from cached! request: ', evt.request.url)
+                
+                // We have intercepted the request here
+                // and are returning the response that was matched
+                // in the cache for this particular event.request
+                return rsp;
+            }
+
+            // at this point request not found in cache so
+            // send it on it's way as usual. 
+            // so we take the request and just send a response
+            // that is just re-making the exact same request
+            return fetch(evt.request)
+        })
+        .catch(err => {
+            console.log('Unable to re-fetch request: ', err);
+        })
+    )
+});
