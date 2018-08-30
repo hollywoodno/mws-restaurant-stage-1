@@ -86,6 +86,7 @@ initMap = () => {
     id: 'mapbox.streets'
   }).addTo(newMap);
 
+  document.querySelector('#map').tabIndex = '-1';
   updateRestaurants();
 }
 /* window.initMap = () => {
