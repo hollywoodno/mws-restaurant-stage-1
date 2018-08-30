@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
  * Initialize leaflet map
  */
 initMap = () => {
+  
   fetchRestaurantFromURL((error, restaurant) => {
     if (error) { // Got an error!
       console.error(error);
@@ -29,6 +30,7 @@ initMap = () => {
           'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         id: 'mapbox.streets'    
       }).addTo(newMap);
+        document.querySelector('#map').tabIndex = '-1';
       fillBreadcrumb();
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
     }
