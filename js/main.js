@@ -73,10 +73,10 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
  */
 initMap = () => {
   self.newMap = L.map('map', {
-        center: [40.722216, -73.987501],
-        zoom: 12,
-        scrollWheelZoom: false
-      });
+    center: [40.722216, -73.987501],
+    zoom: 12,
+    scrollWheelZoom: false
+  });
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
     mapboxToken: 'pk.eyJ1IjoiZnV6emJ1enoiLCJhIjoiY2psOWpscTJtM3VmYjNxcGdoY2kwc2g4ZCJ9.1mgdV9yHiGc2dZlxBt0LpA',
     maxZoom: 18,
@@ -199,7 +199,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 
-} 
+}
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
@@ -212,14 +212,14 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 } */
 
 /* Register service worker */
-// if ('serviceWorker' in navigator) {
-//   window.addEventListener('load', function() {
-//     console.log('Window has loaded. Register service worker');
-//     this.navigator.serviceWorker.register('/sw.js').then(function(registration) {
-//       console.log('REGISTRATION SUCCESSFUL!!!!!!!!!');
-//     }).catch(function(e) {
-//       console.log('Ooops: something went wrong with registration. Error: ', e);
-//     })
-//   })
-// }
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    console.log('Window has loaded. Registering service worker...');
+    this.navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      console.log('Registration succeeded.');
+    }).catch(function(e) {
+      console.log('Ooops: something went wrong with registration. Error: ', e);
+    })
+  })
+}
 
