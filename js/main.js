@@ -162,6 +162,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = restaurant.name;
   li.append(image);
 
   const name = document.createElement('h1');
@@ -211,14 +212,14 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 } */
 
 /* Register service worker */
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    console.log('Window has loaded. Register service worker');
-    this.navigator.serviceWorker.register('/sw.js').then(function(registration) {
-      console.log('REGISTRATION SUCCESSFUL!!!!!!!!!');
-    }).catch(function(e) {
-      console.log('Ooops: something went wrong with registration. Error: ', e);
-    })
-  })
-}
+// if ('serviceWorker' in navigator) {
+//   window.addEventListener('load', function() {
+//     console.log('Window has loaded. Register service worker');
+//     this.navigator.serviceWorker.register('/sw.js').then(function(registration) {
+//       console.log('REGISTRATION SUCCESSFUL!!!!!!!!!');
+//     }).catch(function(e) {
+//       console.log('Ooops: something went wrong with registration. Error: ', e);
+//     })
+//   })
+// }
 
