@@ -331,6 +331,7 @@ nav h1 a {
     display: inline-block;
     vertical-align: top;
     width: 50%;
+    margin: 1em;
   }
   #map {
     height: 300px;
@@ -351,6 +352,7 @@ nav h1 a {
     display: inline-block;
     vertical-align: top;
     width: 33%;
+    margin: 1em 2em;
   }
   #restaurant-container, #reviews-container, .inside #footer, #breadcrumb {
     width: 50%;
@@ -397,6 +399,7 @@ nav h1 a {
     display: inline-block;
     vertical-align: top;
     width: 25%;
+    margin: 1em 2em;
   }
   #breadcrumb {
     padding: 10px 40px 16px;
