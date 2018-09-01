@@ -259,7 +259,7 @@ nav h1 a {
 }
 
 #restaurant-img {
-  width: 90%;
+  width: 100%;
 }
 
 #restaurant-address {
@@ -277,7 +277,7 @@ nav h1 a {
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
-  width: 90%;
+  width: 100%;
 }
 
 #restaurant-container, #reviews-container {
@@ -416,10 +416,11 @@ nav h1 a {
   .inside #map-container {
     position: absolute;
     width: 50%;
-    height: 30%;
+    height: 50%;
+    top: 0;
   }
   #map {
-    height: 400px;
+    max-height: 80%;
   }
   .inside #footer, #reviews-list {
     width: 100%;
