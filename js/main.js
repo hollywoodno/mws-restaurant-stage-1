@@ -73,10 +73,10 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
  */
 initMap = () => {
   self.newMap = L.map('map', {
-        center: [40.722216, -73.987501],
-        zoom: 12,
-        scrollWheelZoom: false
-      });
+    center: [40.722216, -73.987501],
+    zoom: 12,
+    scrollWheelZoom: false
+  });
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
     mapboxToken: 'pk.eyJ1IjoiZnV6emJ1enoiLCJhIjoiY2psOWpscTJtM3VmYjNxcGdoY2kwc2g4ZCJ9.1mgdV9yHiGc2dZlxBt0LpA',
     maxZoom: 18,
@@ -86,6 +86,7 @@ initMap = () => {
     id: 'mapbox.streets'
   }).addTo(newMap);
 
+  document.querySelector('#map').tabIndex = '-1';
   updateRestaurants();
 }
 /* window.initMap = () => {
@@ -161,6 +162,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = restaurant.name;
   li.append(image);
 
   const name = document.createElement('h1');
@@ -197,7 +199,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 
-} 
+}
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
@@ -212,9 +214,9 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 /* Register service worker */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    console.log('Window has loaded. Register service worker');
+    console.log('Window has loaded. Registering service worker...');
     this.navigator.serviceWorker.register('/sw.js').then(function(registration) {
-      console.log('REGISTRATION SUCCESSFUL!!!!!!!!!');
+      console.log('Registration succeeded.');
     }).catch(function(e) {
       console.log('Ooops: something went wrong with registration. Error: ', e);
     })
