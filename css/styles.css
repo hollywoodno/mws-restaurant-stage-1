@@ -47,6 +47,22 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   display: block;
 }
 
+a.skip-map-link {
+  position: absolute;
+  left: -1000px;
+  z-index: 5000;
+  background-color: white;
+  border: 3px solid #b55913;
+  font-size: 1rem;
+  color: black;
+  padding: 10px; 
+  min-width: 45px;
+}
+
+a.skip-map-link:focus {
+  left: 0;
+}
+
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
