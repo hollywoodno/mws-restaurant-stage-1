@@ -198,7 +198,7 @@ a.skip-map-link:focus {
   display: inline-block;
 }
 
-#restaurants-list li {
+#restaurants-list article {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial, sans-serif;
@@ -208,13 +208,13 @@ a.skip-map-link:focus {
   width: 100%;
 }
 
-#restaurants-list .restaurant-img {
+#restaurants-list section .restaurant-img {
   background-color: #ccc;
   width: 100%;
   height: auto;
 }
 
-#restaurants-list li h1 {
+#restaurants-list article h3 {
   color: #b55913;
   font-family: Arial, sans-serif;
   font-size: 1rem;
@@ -228,12 +228,12 @@ a.skip-map-link:focus {
   text-overflow: ellipsis;
 }
 
-#restaurants-list p {
+#restaurants-list article p {
   margin: 0;
   font-size: 1rem;
 }
 
-#restaurants-list li a {
+#restaurants-list article a {
   background-color: #b55913;
   border-bottom: 3px solid #eee;
   color: #fff;
@@ -349,10 +349,10 @@ a.skip-map-link:focus {
 /* ====================== Media Queries ====================== */
 
 @media screen and (min-width:559px) {
-  #restaurants-list li p, #restaurants-list li h1 {
+  #restaurants-list article p, #restaurants-list article h3 {
     font-size: 2vw;
   }
-  #restaurants-list li {
+  #restaurants-list article {
     display: inline-block;
     vertical-align: top;
     width: 50%;
@@ -370,10 +370,10 @@ a.skip-map-link:focus {
 }
 
 @media screen and (min-width:846px) {
-  #restaurants-list li p, #restaurants-list li h1 {
+  #restaurants-list article p, #restaurants-list article h3 {
     font-size: 1.3vw;
   }
-  #restaurants-list li {
+  #restaurants-list article {
     display: inline-block;
     vertical-align: top;
     width: 33%;
@@ -417,10 +417,10 @@ a.skip-map-link:focus {
     margin-right: auto;
     margin-left: auto;
   }
-  #restaurants-list li p, #restaurants-list li h1 {
+  #restaurants-list article p, #restaurants-list article h3 {
     font-size: .9vw;
   }
-  #restaurants-list li {
+  #restaurants-list article {
     display: inline-block;
     vertical-align: top;
     width: 25%;
