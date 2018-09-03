@@ -16,13 +16,13 @@
 
   <!-- Heading -->
   <header>
-    <nav class="page-header" aria-labelledby="nav1">
+    <nav class="page-header">
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
     
     <!-- Breadcrumb -->
-    <ul role="navigation" id="breadcrumb" aria-label="breadcrumb" aria-labelledby="nav2">
-      <li><a href="/">Home</a></li>
+    <ul role="navigation" id="breadcrumb" aria-label="breadcrumb">
+      <li aria-description="home"><a href="/">Home</a></li>
     </ul>
   </header>
 
@@ -31,7 +31,7 @@
 
     <!-- Location Map -->
     <aside id="map-container">
-      <div id="map" role="application"></div>
+      <div id="map" role="application" aria-label="map of restaurant"></div>
     </aside>
 
     <!-- Main Details -->

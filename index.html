@@ -14,10 +14,8 @@
 <body>
 
   <!-- Heading -->
-  <header>
-    <nav class="page-header">
-      <h1><a href="/">Restaurant Reviews</a></h1>
-    </nav>
+  <header class="page-header">
+    <h1><a href="/">Restaurant Reviews</a></h1>
   </header>
 
   <!-- Main Content -->
@@ -25,10 +23,10 @@
 
     <!-- Map -->
     <section id="map-container">
-      <h2 class="map-header">Current Locations</h2>
+      <h2 class="map-header" id="current-locations">Current Locations</h2>
       <!-- For screen readers to skip over map -->
-      <a href="#filter-options" class="skip-map-link">Skip to Filters</a>
-      <div id="map" role="application"></div>
+      <a aria-label="skip to restaurant filters" href="#filter-options" class="skip-map-link">Skip to Filters</a>
+      <div id="map" role="application" aria-labelledby="current-locations"></div>
     </section>
 
     <!-- Filtered Restaurant View-->

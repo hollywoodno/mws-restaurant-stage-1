@@ -86,7 +86,7 @@ initMap = () => {
     id: 'mapbox.streets'
   }).addTo(newMap);
 
-  document.querySelector('#map').tabIndex = '-1';
+  // document.querySelector('#map').tabIndex = '-1';
   updateRestaurants();
 }
 /* window.initMap = () => {
@@ -232,14 +232,14 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 } */
 
 /* Register service worker */
-// if ('serviceWorker' in navigator) {
-//   window.addEventListener('load', function() {
-//     console.log('Window has loaded. Registering service worker...');
-//     this.navigator.serviceWorker.register('/sw.js').then(function(registration) {
-//       console.log('Registration succeeded.');
-//     }).catch(function(e) {
-//       console.log('Ooops: something went wrong with registration. Error: ', e);
-//     })
-//   })
-// }
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    console.log('Window has loaded. Registering service worker...');
+    this.navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      console.log('Registration succeeded.');
+    }).catch(function(e) {
+      console.log('Ooops: something went wrong with registration. Error: ', e);
+    })
+  })
+}
 
