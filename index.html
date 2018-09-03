@@ -31,8 +31,8 @@
 
     <!-- Filtered Restaurant View-->
     <section>
-      <header id="filter-options" class="filter-options" tabindex="-1">
-        <h2>Filter Results</h2>
+      <header id="filter-options" class="filter-options" tabindex="-1" aria-labelledby="filters" role="group">
+        <h2 id="filters">Filter Results</h2>
         <select aria-label="neighborhoods-select" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
