@@ -86,7 +86,7 @@ initMap = () => {
     id: 'mapbox.streets'
   }).addTo(newMap);
 
-  document.querySelector('#map').tabIndex = '-1';
+  // document.querySelector('#map').tabIndex = '-1';
   updateRestaurants();
 }
 /* window.initMap = () => {
@@ -157,32 +157,50 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  * Create restaurant HTML.
  */
 createRestaurantHTML = (restaurant) => {
-  const li = document.createElement('li');
 
+  // Build main parts of restaurant card  
+  const article = document.createElement('article');
+  const header = document.createElement('header');
+  const section = document.createElement('section');
+
+  article.append(header);
+  article.append(section);
+
+  
+  // Heading
+  const name = document.createElement('h3');
+  header.append(name);
+  
+  name.innerHTML = restaurant.name;
+
+  // Image
   const image = document.createElement('img');
+  section.append(image);
+  
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.alt = restaurant.name;
-  li.append(image);
-
-  const name = document.createElement('h1');
-  name.innerHTML = restaurant.name;
-  li.append(name);
-
+  image.alt = `${restaurant.name} restaurant`;
+  
+  // Location
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
-  li.append(neighborhood);
+  
+  section.append(neighborhood);
 
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
-  li.append(address);
+  
+  section.append(address);
 
+  // More Details
   const more = document.createElement('a');
-  more.innerHTML = 'View Details';
+  more.innerHTML = `View Details`;
+  more.setAttribute('aria-label', `View Details of Restaurant ${restaurant.name}`);
   more.href = DBHelper.urlForRestaurant(restaurant);
-  li.append(more)
+  
+  section.append(more)
 
-  return li
+  return article;
 }
 
 /**
@@ -192,6 +210,8 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
+    // marker.setAttribute("role", "link")
+    console.log("marker: ", marker);
     marker.on("click", onClick);
     function onClick() {
       window.location.href = marker.options.url;
